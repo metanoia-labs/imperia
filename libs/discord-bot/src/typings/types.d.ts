@@ -3,3 +3,9 @@ export type SelectMenuOptions = {
     description: string;
     value: string;
 };
+
+export type CommandField = {
+    name: `</${string}:${string}>`;
+    value: string;
+    inline: boolean;
+};
