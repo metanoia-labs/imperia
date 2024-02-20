@@ -5,7 +5,7 @@ import { Listener } from "@sapphire/framework";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
 import { eq } from "drizzle-orm";
 
-export class ChatInputCommandRunListener extends Listener {
+export class ChatInputCommandAcceptedListener extends Listener {
     public constructor(context: Listener.LoaderContext, options: Listener.Options) {
         super(context, {
             ...options,
