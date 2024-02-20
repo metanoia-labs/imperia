@@ -8,6 +8,7 @@ export const configuration: ImperiaClientOptions = {
     loadMessageCommandListeners: true,
     loadSubcommandErrorListeners: true,
     loadDefaultErrorListeners: true,
+    defaultPrefix: "imp!",
     presence: {
         activities: [
             {

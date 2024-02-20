@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@sapphire/discord.js-utilities':
+    specifier: ^7.1.6
+    version: 7.1.6
   '@sapphire/framework':
     specifier: ^5.0.7
     version: 5.0.7
