@@ -12,6 +12,7 @@ export class UserInformationCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
         super(context, {
             name: "userinfo",
+            description: "View your information or the information of another user.",
             requiredClientPermissions: ["SendMessages"],
             ...options,
         });
@@ -19,8 +20,8 @@ export class UserInformationCommand extends ImperiaCommand {
 
     public override registerApplicationCommands(registry: ImperiaCommand.Registry): void {
         const command = new SlashCommandBuilder()
-            .setName("userinfo")
-            .setDescription("View your information or the information of another user.")
+            .setName(this.name)
+            .setDescription(this.description)
             .addUserOption((option) =>
                 option.setName("user").setDescription("Defaults to the command user if no user is provided.")
             );

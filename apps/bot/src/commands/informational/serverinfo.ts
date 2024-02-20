@@ -11,15 +11,14 @@ export class ServerInformationCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
         super(context, {
             name: "serverinfo",
+            description: "View information of the server where this command is executed.",
             requiredClientPermissions: ["SendMessages"],
             ...options,
         });
     }
 
     public override registerApplicationCommands(registry: ImperiaCommand.Registry): void {
-        const command = new SlashCommandBuilder()
-            .setName("serverinfo")
-            .setDescription("View information of the server where this command is executed.");
+        const command = new SlashCommandBuilder().setName(this.name).setDescription(this.description);
 
         void registry.registerChatInputCommand(command, {
             behaviorWhenNotIdentical: RegisterBehavior.Overwrite,

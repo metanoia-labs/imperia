@@ -6,6 +6,7 @@ export class AvatarCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
         super(context, {
             name: "avatar",
+            description: "View the avatar of a user.",
             requiredClientPermissions: ["SendMessages"],
             ...options,
         });
@@ -13,8 +14,8 @@ export class AvatarCommand extends ImperiaCommand {
 
     public override registerApplicationCommands(registry: ImperiaCommand.Registry): void {
         const command = new SlashCommandBuilder()
-            .setName("avatar")
-            .setDescription("View your avatar or the avatar of another user.")
+            .setName(this.name)
+            .setDescription(this.description)
             .addUserOption((option) =>
                 option
                     .setName("user")

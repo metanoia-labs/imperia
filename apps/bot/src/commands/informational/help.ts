@@ -7,15 +7,14 @@ export class HelpCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
         super(context, {
             name: "help",
+            description: "Retrive a helpful information about Imperia and its available commands.",
             requiredClientPermissions: ["SendMessages"],
             ...options,
         });
     }
 
     public override registerApplicationCommands(registry: ImperiaCommand.Registry): void {
-        const command = new SlashCommandBuilder()
-            .setName("help")
-            .setDescription("Retrive a helpful information about Imperia and its available commands.");
+        const command = new SlashCommandBuilder().setName(this.name).setDescription(this.description);
 
         void registry.registerChatInputCommand(command, {
             behaviorWhenNotIdentical: RegisterBehavior.Overwrite,
@@ -60,7 +59,7 @@ export class HelpCommand extends ImperiaCommand {
 
             paginate.addPageBuilder((builder: MessageBuilder) => {
                 const embed = new EmbedBuilder()
-                    .setTitle(`${category.charAt(0).toUpperCase() + category.slice(1)} Commands`)
+                    .setTitle(`${category.charAt(0).toUpperCase() + category.slice(1)} commands`)
                     .addFields(commandFields);
 
                 return builder.setEmbeds([embed]);
