@@ -16,6 +16,14 @@
                 "format": ["cjs"]
             }
         },
+        "drizzle": {
+            "executor": "nx:run-commands",
+            "configurations": {
+                "generate": {
+                    "commands": ["pnpm exec drizzle-kit generate:pg --config=libs/database/drizzle.config.ts"]
+                }
+            }
+        },
         "compose": {
             "executor": "nx:run-commands",
             "configurations": {
