@@ -12,7 +12,7 @@ export class ChatInputCommandDeniedListener extends Listener {
     }
 
     public async run(error: UserError, data: ChatInputCommandDeniedPayload): Promise<InteractionResponse<boolean>> {
-        const embed: EmbedBuilder = new EmbedBuilder();
+        const embed: EmbedBuilder = new EmbedBuilder().isErrorEmbed();
 
         switch (error.identifier) {
             case Identifiers.PreconditionCooldown:
