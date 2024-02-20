@@ -94,7 +94,7 @@ export class UserInformationCommand extends ImperiaCommand {
                 customId: "userinfo-command-select-menu",
                 type: ComponentType.StringSelect,
                 options: selectMenuOptions,
-                placeholder: "Select an option",
+                placeholder: "View more information",
                 run: ({ handler, interaction }) => {
                     if (interaction.isStringSelectMenu()) {
                         handler.index = options.indexOf(interaction.values[0]);
