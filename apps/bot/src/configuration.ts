@@ -1,4 +1,5 @@
 import { ImperiaClientOptions } from "@imperia/discord-bot";
+import { LogLevel } from "@sapphire/framework";
 import { ActivityType, GatewayIntentBits } from "discord.js";
 
 export const configuration: ImperiaClientOptions = {
@@ -19,4 +20,7 @@ export const configuration: ImperiaClientOptions = {
         status: "dnd",
     },
     typing: true,
+    logger: {
+        level: LogLevel.Debug,
+    },
 };
