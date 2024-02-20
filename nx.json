@@ -6,10 +6,10 @@
     "release": {
         "projects": ["apps/*"],
         "projectsRelationship": "independent",
-        "releaseTagPattern": "release/{projectName}/{version}",
         "changelog": {
-            "projectChangelogs": true,
-            "workspaceChangelog": {
+            "automaticFromRef": true,
+            "projectChangelogs": {
+                "file": false,
                 "createRelease": "github"
             }
         }
