@@ -3,6 +3,17 @@
     "affected": {
         "defaultBase": "master"
     },
+    "release": {
+        "projects": ["apps/*"],
+        "projectsRelationship": "independent",
+        "releaseTagPattern": "release/{projectName}/{version}",
+        "changelog": {
+            "projectChangelogs": true,
+            "workspaceChangelog": {
+                "createRelease": "github"
+            }
+        }
+    },
     "namedInputs": {
         "default": ["{projectRoot}/**/*", "sharedGlobals"],
         "production": [
