@@ -15,6 +15,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@imperia/database": ["libs/database/src/index.ts"],
             "@imperia/discord-bot": ["libs/discord-bot/src/index.ts"]
         }
     },

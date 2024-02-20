@@ -1,0 +1,32 @@
+{
+    "name": "database",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/database/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/database",
+                "main": "libs/database/src/index.ts",
+                "tsConfig": "libs/database/tsconfig.lib.json",
+                "assets": ["libs/database/*.md"],
+                "generatePackageJson": true,
+                "format": ["cjs"]
+            }
+        },
+        "compose": {
+            "executor": "nx:run-commands",
+            "configurations": {
+                "up": {
+                    "commands": ["docker-compose -f libs/database/docker-compose.yml up -d"]
+                },
+                "down": {
+                    "commands": ["docker-compose -f libs/database/docker-compose.yml down"]
+                }
+            }
+        }
+    },
+    "tags": []
+}
