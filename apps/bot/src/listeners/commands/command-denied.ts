@@ -21,6 +21,9 @@ export class ChatInputCommandDeniedListener extends Listener {
             case Identifiers.PreconditionUserPermissions || Identifiers.PreconditionUserPermissionsNoPermissions:
                 embed.setDescription("You do not have the required permissions to use this command.");
                 return data.interaction.reply({ embeds: [embed], ephemeral: true });
+            case Identifiers.PreconditionClientPermissions || Identifiers.PreconditionClientPermissionsNoPermissions:
+                embed.setDescription("I do not have the required permissions to use this command.");
+                return data.interaction.reply({ embeds: [embed], ephemeral: true });
             default:
                 this.container.logger.error(error);
                 embed.setDescription(
