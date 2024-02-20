@@ -1,3 +1,15 @@
+## 1.1.2 (2024-02-20)
+
+
+### 🚀 Features
+
+- **bot:** add user agreement prompt ([8e8e6ae](https://github.com/metanoia-labs/imperia/commit/8e8e6ae))
+
+
+### ❤️  Thank You
+
+- elizielx
+
 ## 1.1.0 (2024-02-20)
 
 
