@@ -1,0 +1,21 @@
+{
+    "name": "discord-bot",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/discord-bot/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "dependsOn": [],
+            "options": {
+                "outputPath": "dist/libs/discord-bot",
+                "main": "libs/discord-bot/src/index.ts",
+                "tsConfig": "libs/discord-bot/tsconfig.lib.json",
+                "assets": ["libs/discord-bot/*.md"],
+                "format": ["cjs"]
+            }
+        }
+    },
+    "tags": []
+}

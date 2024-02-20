@@ -1,10 +1,8 @@
-import { SapphireClient } from "@sapphire/framework";
-import { GatewayIntentBits } from "discord.js";
+import { ImperiaClient } from "@imperia/discord-bot";
+import { configuration } from "./configuration";
 
-const client = new SapphireClient({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
-    baseUserDirectory: __dirname,
-    loadMessageCommandListeners: true,
-});
+const main = async (): Promise<void> => {
+    void new ImperiaClient(configuration).login(process.env.DISCORD_TOKEN);
+};
 
-client.login(process.env.DISCORD_TOKEN);
+void main();
