@@ -1,38 +1,54 @@
 import { EmbedBuilder, ImperiaCommand } from "@imperia/discord-bot";
+import { RegisterBehavior } from "@sapphire/framework";
+import { GuildMember, SlashCommandBuilder } from "discord.js";
 
-export class PingCommand extends ImperiaCommand {
+export class AvatarCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
-        super(context, { ...options });
+        super(context, {
+            name: "avatar",
+            requiredClientPermissions: ["SendMessages"],
+            ...options,
+        });
     }
 
-    public override registerApplicationCommands(registry: ImperiaCommand.Registry) {
-        registry.registerChatInputCommand((builder) =>
-            builder
-                .setName("avatar")
-                .setDescription("View your avatar or the avatar of another user.")
-                .addUserOption((option) =>
-                    option
-                        .setName("user")
-                        .setDescription(
-                            "The user to view the avatar of. If not provided, the command will default to the user who used the command."
-                        )
-                )
-        );
+    public override registerApplicationCommands(registry: ImperiaCommand.Registry): void {
+        const command = new SlashCommandBuilder()
+            .setName("avatar")
+            .setDescription("View your avatar or the avatar of another user.")
+            .addUserOption((option) =>
+                option
+                    .setName("user")
+                    .setDescription("View the avatar of a user. Defaults to the command user if no user is provided.")
+            );
+
+        void registry.registerChatInputCommand(command, {
+            behaviorWhenNotIdentical: RegisterBehavior.Overwrite,
+            guildIds: [],
+            idHints: [],
+        });
     }
 
     public async chatInputRun(interaction: ImperiaCommand.ChatInputCommandInteraction) {
-        const { id, tag, displayAvatarURL } = interaction.options.getUser("user") ?? interaction.user;
-        const userInGuild = await interaction.guild.members.fetch(id);
+        const user = interaction.options.getUser("user") ?? interaction.user;
+        const member: GuildMember = interaction.guild.members.cache.get(user.id);
 
-        const avatarEmbed = [
-            new EmbedBuilder()
-                .setImage(displayAvatarURL({ size: 4096 }))
-                .setAuthor({ name: tag, iconURL: displayAvatarURL() }),
-            ...(displayAvatarURL() !== userInGuild.displayAvatarURL()
-                ? [new EmbedBuilder().setImage(userInGuild.displayAvatarURL({ size: 4096 }))]
-                : []),
-        ];
+        const userAvatar = user.displayAvatarURL({ size: 4096 });
+        const memberAvatar = member.displayAvatarURL({ size: 4096 });
 
-        return interaction.reply({ embeds: avatarEmbed });
+        const avatars: EmbedBuilder[] =
+            userAvatar !== memberAvatar
+                ? [
+                      new EmbedBuilder()
+                          .setAuthor({ name: `${user.username}'s avatar`, iconURL: userAvatar })
+                          .setImage(userAvatar),
+                      new EmbedBuilder().setImage(memberAvatar),
+                  ]
+                : [
+                      new EmbedBuilder()
+                          .setAuthor({ name: `${user.username}'s avatar`, iconURL: userAvatar })
+                          .setImage(userAvatar),
+                  ];
+
+        return interaction.reply({ embeds: avatars });
     }
 }

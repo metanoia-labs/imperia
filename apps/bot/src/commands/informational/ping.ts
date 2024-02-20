@@ -3,7 +3,11 @@ import { ImperiaCommand } from "@imperia/discord-bot";
 
 export class PingCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
-        super(context, { ...options });
+        super(context, {
+            name: "ping",
+            requiredClientPermissions: ["SendMessages"],
+            ...options,
+        });
     }
 
     public override registerApplicationCommands(registry: ImperiaCommand.Registry) {
