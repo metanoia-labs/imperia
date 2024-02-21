@@ -6,7 +6,6 @@ import { cn } from "../utils/cn";
 import { MainNavigation } from "./main-navigation";
 import { MainNavigationItem } from "./navigation-items";
 import { Button, buttonVariants } from "./ui/button";
-import Icons from "./icons";
 
 interface InitialLayoutProps {
     children: React.ReactNode;
