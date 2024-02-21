@@ -1,0 +1,21 @@
+{
+    "name": "website",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/website/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/website",
+                "main": "libs/website/src/index.ts",
+                "tsConfig": "libs/website/tsconfig.lib.json",
+                "assets": ["libs/website/*.md"],
+                "generatePackageJson": true,
+                "format": ["cjs"]
+            }
+        }
+    },
+    "tags": []
+}

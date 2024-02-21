@@ -16,7 +16,8 @@
         "baseUrl": ".",
         "paths": {
             "@imperia/database": ["libs/database/src/index.ts"],
-            "@imperia/discord-bot": ["libs/discord-bot/src/index.ts"]
+            "@imperia/discord-bot": ["libs/discord-bot/src/index.ts"],
+            "@imperia/website": ["libs/website/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
