@@ -28,3 +28,5 @@ export function MainNavigation({ items, children }: MainNavigationProps) {
         </div>
     );
 }
+
+export default MainNavigation;

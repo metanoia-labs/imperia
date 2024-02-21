@@ -6,6 +6,7 @@ import { cn } from "../utils/cn";
 import { MainNavigation } from "./main-navigation";
 import { MainNavigationItem } from "./navigation-items";
 import { Button, buttonVariants } from "./ui/button";
+import Icons from "./icons";
 
 interface InitialLayoutProps {
     children: React.ReactNode;
@@ -51,7 +52,7 @@ export function InitialLayout({ children }: InitialLayoutProps) {
                 <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                     <div className="flex flex-col text-center md:text-left flex-grow">
                         <p className="text-balance text-sm leading-loose text-muted-foreground">
-                            © 2024 All rights reserved.
+                            Imperia is currently under heavy development. Some feature may be missing or incomplete.
                         </p>
                     </div>
                     <div className="flex flex-row gap-4 text-center md:text-left">
