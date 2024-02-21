@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import { Icons } from "./icons";
 import { MobileNavigation } from "./mobile-navigation";
-import { MainNavigationItem } from "./navigation-items";
 import Image from "next/image";
 
 interface MainNavigationProps {

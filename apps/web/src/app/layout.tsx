@@ -1,6 +1,6 @@
 import "./global.css";
 import { GeistSans } from "geist/font/sans";
-import { cn } from "@imperia/website";
+import { InitialLayout, cn } from "@imperia/website";
 
 // const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 

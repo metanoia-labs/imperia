@@ -1,37 +1,8 @@
-import { Button, MainNavigation, MainNavigationItem, Separator, buttonVariants, cn } from "@imperia/website";
-import Link from "next/link";
-
-const navigationItems = [
-    {
-        title: "Features",
-        href: "#features",
-    },
-];
+import { InitialLayout } from "@imperia/website";
 
 export default async function PrivacyPolicy() {
     return (
-        <div className="flex min-h-screen flex-col mb-8">
-            <header className="container bg-background">
-                <div className="flex h-20 items-center justify-between py-6 mb-2 mt-2">
-                    <MainNavigation items={navigationItems} />
-                    <nav className="flex flex-row space-x-8 items-center">
-                        {navigationItems?.length ? (
-                            <nav className="hidden gap-12 md:flex">
-                                {navigationItems?.map((item, index) => (
-                                    <MainNavigationItem
-                                        key={index}
-                                        item={item}
-                                        isLast={index === navigationItems.length - 1}
-                                    />
-                                ))}
-                            </nav>
-                        ) : null}
-                        <Button disabled className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-4")}>
-                            Dashboard
-                        </Button>
-                    </nav>
-                </div>
-            </header>
+        <InitialLayout>
             <main className="flex-1 mb-24">
                 <section className="space-y-6 pt-6 md:pt-10 lg:pt-24">
                     <div className="container flex max-w-[64rem] flex-col gap-2 text-left">
@@ -43,10 +14,6 @@ export default async function PrivacyPolicy() {
                                     website. This information is used to provide you with the best experience and to
                                     improve the quality of our services. Please read the following to learn more about
                                     our Privacy Policy.
-                                </p>
-                                <p className="leading-7 [&:not(:first-child)]:mt-6 text-muted-foreground">
-                                    By using Imperia, you agree to the terms outlined in this Privacy Policy. If you do
-                                    not agree with these terms, please refrain from using the bot.
                                 </p>
                                 <h2 className="[&:not(:first-child)]:mt-8 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
                                     1. Information we collect
@@ -107,6 +74,6 @@ export default async function PrivacyPolicy() {
                     </div>
                 </section>
             </main>
-        </div>
+        </InitialLayout>
     );
 }
