@@ -1,10 +1,13 @@
 import { Button, MainNavigation, MainNavigationItem, buttonVariants, cn } from "@imperia/website";
-import Link from "next/link";
 
 const navigationItems = [
     {
-        title: "Features",
-        href: "#features",
+        title: "Invite",
+        href: "https://discord.com/api/oauth2/authorize?client_id=911590809873301514&permissions=0&scope=applications.commands%20bot",
+    },
+    {
+        title: "Support Server",
+        href: "https://discord.gg/KfhgHw7pvn",
     },
 ];
 
@@ -38,8 +41,7 @@ export default async function Index() {
                         <div className="flex flex-col items-center gap-4">
                             <h1 className="text-4xl font-semibold md:text-6xl lg:text-6xl">Imperia</h1>
                             <p className="text-base text-muted-foreground mb-2 max-w-">
-                                A software developer with a passion for building digital experiences that are accessible
-                                and delightful with a focus on performance and user experience.
+                                A versatile and multipurpose Discord bot with a comprehensive array of features.
                             </p>
                             <div className="space-x-4">
                                 <Button disabled className="px-8" variant="secondary">
