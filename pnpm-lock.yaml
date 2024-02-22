@@ -20,6 +20,9 @@ dependencies:
   '@sapphire/framework':
     specifier: ^5.0.7
     version: 5.0.7
+  '@sapphire/plugin-logger':
+    specifier: ^4.0.2
+    version: 4.0.2
   '@sapphire/plugin-subcommands':
     specifier: ^6.0.3
     version: 6.0.3
@@ -3671,6 +3674,14 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /@sapphire/plugin-logger@4.0.2:
+    resolution: {integrity: sha512-5Nr++u+fA3/jZwj1aL9Z16RgyJZRE1gyUftfWjrzdndE5FkcbnLiVCKvnI8WzSupVhdn6kMaCWAteOSgAaq3lQ==}
+    engines: {node: '>=v18', npm: '>=7'}
+    dependencies:
+      '@sapphire/timestamp': 1.0.3
+      colorette: 2.0.20
+    dev: false
+
   /@sapphire/plugin-subcommands@6.0.3:
     resolution: {integrity: sha512-SLDlTjMrMpb3s89ZjrBvVbMWsXfNNciO6SnNQdKLKTUQwktaYxIdj+k3MmEWpN19i8W9ogRvIrLl0Hw20pPUng==}
     engines: {node: '>=v18', npm: '>=7'}
@@ -3707,6 +3718,11 @@ packages:
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@sapphire/timestamp@1.0.3:
+    resolution: {integrity: sha512-I2TwqlLDA2Uu576VUgyBaT1gP1WSWPxeW3NqFxsSJfwFyvzXkTzyQiYce0eWMpM6BdBCq7Dddg+Yayls/5K1RA==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
     dev: false
 
   /@sapphire/utilities@3.15.3:
@@ -5440,7 +5456,6 @@ packages:
 
   /colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
-    dev: true
 
   /columnify@1.6.0:
     resolution: {integrity: sha512-lomjuFZKfM6MSAnV9aCZC9sc0qGbmZdfygNv+nCpqVkSKdCxCklLtd16O0EILGkImHw9ZpHkAnHaB+8Zxq5W6Q==}

@@ -1,3 +1,5 @@
+import "@sapphire/plugin-logger/register";
+
 import { ImperiaClient } from "@imperia/discord-bot";
 import { configuration } from "./configuration";
 

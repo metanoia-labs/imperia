@@ -10,6 +10,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@sapphire/discord.js-utilities": "^7.1.6",
     "@sapphire/framework": "^5.0.7",
+    "@sapphire/plugin-logger": "^4.0.2",
     "@sapphire/plugin-subcommands": "^6.0.3",
     "@sapphire/utilities": "^3.15.3",
     "class-variance-authority": "^0.7.0",
