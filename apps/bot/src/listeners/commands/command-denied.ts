@@ -1,5 +1,5 @@
-import { EmbedBuilder, ImperiaEvents } from "@imperia/discord-bot";
-import { ChatInputCommandDeniedPayload, Identifiers, Listener, UserError } from "@sapphire/framework";
+import { EmbedBuilder, ImperiaEvents, ImperiaIdentifiers } from "@imperia/discord-bot";
+import { ChatInputCommandDeniedPayload, Listener, UserError } from "@sapphire/framework";
 import { InteractionResponse } from "discord.js";
 
 export class ChatInputCommandDeniedListener extends Listener {
@@ -15,13 +15,15 @@ export class ChatInputCommandDeniedListener extends Listener {
         const embed: EmbedBuilder = new EmbedBuilder().isErrorEmbed();
 
         switch (error.identifier) {
-            case Identifiers.PreconditionCooldown:
+            case ImperiaIdentifiers.PreconditionCooldown:
                 embed.setDescription("Please wait before using this command again.");
                 return data.interaction.reply({ embeds: [embed], ephemeral: true });
-            case Identifiers.PreconditionUserPermissions || Identifiers.PreconditionUserPermissionsNoPermissions:
+            case ImperiaIdentifiers.PreconditionUserPermissions ||
+                ImperiaIdentifiers.PreconditionUserPermissionsNoPermissions:
                 embed.setDescription("You do not have the required permissions to use this command.");
                 return data.interaction.reply({ embeds: [embed], ephemeral: true });
-            case Identifiers.PreconditionClientPermissions || Identifiers.PreconditionClientPermissionsNoPermissions:
+            case ImperiaIdentifiers.PreconditionClientPermissions ||
+                ImperiaIdentifiers.PreconditionClientPermissionsNoPermissions:
                 embed.setDescription("I do not have the required permissions to use this command.");
                 return data.interaction.reply({ embeds: [embed], ephemeral: true });
             default:
