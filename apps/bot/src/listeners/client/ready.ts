@@ -1,12 +1,13 @@
+import { ImperiaEvents } from "@imperia/discord-bot";
 import { Listener } from "@sapphire/framework";
-import { Client, Events } from "discord.js";
+import { Client } from "discord.js";
 
 export class ReadyListener extends Listener {
     public constructor(context: Listener.Context, options: Listener.Options) {
         super(context, {
             ...options,
             once: true,
-            event: Events.ClientReady,
+            event: ImperiaEvents.ClientReady,
         });
     }
 

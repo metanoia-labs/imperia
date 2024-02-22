@@ -1,6 +1,6 @@
 import { db, usersTable } from "@imperia/database";
-import { EmbedBuilder, USER_AGREEMENT_ID, UserAgreementStatus } from "@imperia/discord-bot";
-import { ChatInputCommandAcceptedPayload, Events } from "@sapphire/framework";
+import { EmbedBuilder, ImperiaEvents, USER_AGREEMENT_ID, UserAgreementStatus } from "@imperia/discord-bot";
+import { ChatInputCommandAcceptedPayload } from "@sapphire/framework";
 import { Listener } from "@sapphire/framework";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
 import { eq } from "drizzle-orm";
@@ -10,7 +10,7 @@ export class ChatInputCommandAcceptedListener extends Listener {
         super(context, {
             ...options,
             once: false,
-            event: Events.ChatInputCommandAccepted,
+            event: ImperiaEvents.ChatInputCommandAccepted,
         });
     }
 

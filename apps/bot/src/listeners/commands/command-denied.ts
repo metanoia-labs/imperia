@@ -1,5 +1,5 @@
-import { EmbedBuilder } from "@imperia/discord-bot";
-import { ChatInputCommandDeniedPayload, Events, Identifiers, Listener, UserError } from "@sapphire/framework";
+import { EmbedBuilder, ImperiaEvents } from "@imperia/discord-bot";
+import { ChatInputCommandDeniedPayload, Identifiers, Listener, UserError } from "@sapphire/framework";
 import { InteractionResponse } from "discord.js";
 
 export class ChatInputCommandDeniedListener extends Listener {
@@ -7,7 +7,7 @@ export class ChatInputCommandDeniedListener extends Listener {
         super(context, {
             ...options,
             once: true,
-            event: Events.ChatInputCommandDenied,
+            event: ImperiaEvents.ChatInputCommandDenied,
         });
     }
 
