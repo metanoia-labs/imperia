@@ -21,6 +21,11 @@
             "configurations": {
                 "generate": {
                     "commands": ["pnpm exec drizzle-kit generate:pg --config=libs/database/drizzle.config.ts"]
+                },
+                "studio": {
+                    "commands": [
+                        "pnpm exec drizzle-kit studio --host 0.0.0.0 --port 3030 --config=libs/database/drizzle.config.ts"
+                    ]
                 }
             }
         },

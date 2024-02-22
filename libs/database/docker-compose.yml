@@ -14,3 +14,4 @@ services:
             - imperia:/var/lib/postgresql/data
 volumes:
     imperia:
+    pgadmin:

@@ -1,6 +1,8 @@
 import type { Config } from "drizzle-kit";
 import * as dotenv from "dotenv";
-dotenv.config();
+dotenv.config({
+    path: "apps/bot/.env",
+});
 
 export default {
     schema: "libs/database/src/schema/*.ts",

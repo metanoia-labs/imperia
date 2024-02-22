@@ -8,7 +8,7 @@
             "executor": "@nx/esbuild:esbuild",
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
-            "dependsOn": ["discord-bot:build"],
+            "dependsOn": ["discord-bot:build", "database:build"],
             "options": {
                 "platform": "node",
                 "outputPath": "dist/apps/bot",
@@ -47,7 +47,7 @@
             "configurations": {
                 "development": {
                     "buildTarget": "bot:build:development",
-                    "inspect": true
+                    "inspect": false
                 },
                 "production": {
                     "buildTarget": "bot:build:production",
