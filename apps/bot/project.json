@@ -47,7 +47,7 @@
             "configurations": {
                 "development": {
                     "buildTarget": "bot:build:development",
-                    "inspect": false
+                    "inspect": true
                 },
                 "production": {
                     "buildTarget": "bot:build:production",
