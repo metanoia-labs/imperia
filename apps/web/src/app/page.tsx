@@ -1,4 +1,14 @@
-import { Button, Card, CardDescription, CardHeader, CardTitle, Icons, InitialLayout } from "@imperia/website";
+import {
+    Button,
+    Card,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+    Icons,
+    InitialLayout,
+    buttonVariants,
+    cn,
+} from "@imperia/website";
 
 export default async function Index() {
     return (
@@ -11,11 +21,15 @@ export default async function Index() {
                             <p className="text-base text-muted-foreground max-w-">
                                 A versatile and multipurpose Discord bot with a comprehensive array of features.
                             </p>
-                            <div className="space-x-4">
-                                <Button disabled className="px-8" variant="secondary">
+                            <div className="space-x-4 flex flex-row justify-between items-center">
+                                <a
+                                    className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-8")}
+                                    href="https://discord.com/api/oauth2/authorize?client_id=911590809873301514&permissions=0&scope=applications.commands%20bot"
+                                >
                                     Invite to server
-                                </Button>
+                                </a>
                                 <Button className="px-8" variant="outline">
+                                    <Icons.github className="mr-2 h-4 w-4" />
                                     GitHub
                                 </Button>
                             </div>

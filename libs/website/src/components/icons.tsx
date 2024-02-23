@@ -5,6 +5,7 @@ import {
     ShieldAlert,
     Coins,
     GitPullRequestDraft,
+    Github,
     X,
     Menu,
     Heart,
@@ -23,6 +24,7 @@ export const Icons = {
     informational: BookOpen,
     socialite: Heart,
     alert: ShieldAlert,
+    github: Github,
 };
 
 export default Icons;
