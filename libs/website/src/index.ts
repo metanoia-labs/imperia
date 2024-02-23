@@ -1,4 +1,5 @@
 export * from "./utils/cn";
+export * from "./utils/auth";
 
 export * from "./components/icons";
 export * from "./components/initial-layout";
