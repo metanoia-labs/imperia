@@ -6,6 +6,8 @@ import { cn } from "../utils/cn";
 import { MainNavigation } from "./main-navigation";
 import { MainNavigationItem } from "./navigation-items";
 import { Button, buttonVariants } from "./ui/button";
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 interface InitialLayoutProps {
     children: React.ReactNode;
@@ -23,6 +25,8 @@ const navigationItems = [
 ];
 
 export function InitialLayout({ children }: InitialLayoutProps) {
+    const { data: session } = useSession();
+
     return (
         <div className="flex min-h-screen flex-col">
             <header className="container bg-background">
@@ -40,9 +44,22 @@ export function InitialLayout({ children }: InitialLayoutProps) {
                                 ))}
                             </nav>
                         ) : null}
-                        <Button disabled className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-4")}>
-                            Dashboard
-                        </Button>
+                        {session ? (
+                            <a
+                                href="/dashboard"
+                                className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-4")}
+                            >
+                                Dashboard
+                            </a>
+                        ) : (
+                            <Button
+                                disabled
+                                onClick={() => signIn("discord")}
+                                className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-4")}
+                            >
+                                Login with Discord
+                            </Button>
+                        )}
                     </nav>
                 </div>
             </header>

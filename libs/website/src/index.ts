@@ -11,3 +11,5 @@ export * from "./components/ui/button";
 export * from "./components/ui/tooltip";
 export * from "./components/ui/separator";
 export * from "./components/ui/card";
+
+export * from "./providers/next-auth";

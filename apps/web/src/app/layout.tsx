@@ -1,8 +1,6 @@
 import "./global.css";
 import { GeistSans } from "geist/font/sans";
-import { InitialLayout, cn } from "@imperia/website";
-
-// const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
+import { NextAuthProvider, cn } from "@imperia/website";
 
 export const metadata = {
     title: "Imperia",
@@ -12,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={cn(`${GeistSans.className} dark`)}>{children}</body>
+            <body className={cn(`${GeistSans.className} dark`)}>
+                <NextAuthProvider>{children}</NextAuthProvider>
+            </body>
         </html>
     );
 }
