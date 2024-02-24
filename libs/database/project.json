@@ -12,7 +12,6 @@
                 "main": "libs/database/src/index.ts",
                 "tsConfig": "libs/database/tsconfig.lib.json",
                 "assets": ["libs/database/*.md"],
-                "generatePackageJson": true,
                 "format": ["cjs"]
             }
         },
