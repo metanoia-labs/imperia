@@ -8,6 +8,7 @@ export class CheckGuildCommand extends ImperiaCommand {
             name: "check-guild",
             description: "Manually triggers the guild creation event to sync and verify guild settings.",
             requiredClientPermissions: ["SendMessages"],
+            preconditions: ["DeveloperOnly"],
             ...options,
         });
     }
