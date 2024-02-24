@@ -11,7 +11,10 @@ Imperia is structured using a monorepo architecture, with separate packages for 
 
 ### Initial Setup
 
+> Current project setup requires you to fill in environment variables on various `.env` files. You can find the `.env.example` files in the respective project directories. This is a temporary solution and will be replaced with a better approach in the future.
+
 -   Open the `.env.example` located in [apps/bot/.env.example](apps/bot/.env.example) and fill in the required environment variables and rename it to `.env`.
+-   Open the `env.local.example` located in [apps/web/env.local.example](apps/web/env.local.example) and fill in the required environment variables and rename it to `env.local`.
     -   If you are using Docker, fill in additional environment variables in [libs/database/.env.example](libs/database/.env.example) and rename it to `.env`, for Docker Compose to use.
 -   Install the dependencies using `pnpm install`.
 
