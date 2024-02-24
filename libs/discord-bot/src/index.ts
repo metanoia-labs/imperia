@@ -11,3 +11,4 @@ export * from "./typings/types.d";
 export * from "./typings/enum";
 export * from "./typings/identifiers";
 export * from "./typings/events";
+export * from "./typings/anilist";
