@@ -115,9 +115,6 @@ export class HelpCommand extends ImperiaCommand {
                 .filter(Boolean)
         );
 
-        this.container.logger.info(`Select menu options: ${JSON.stringify(selectMenuOptions)}`);
-        this.container.logger.info(`Categories: ${JSON.stringify(categories)}`);
-
         paginate.setActions([
             {
                 customId: "help-command-select-menu",
