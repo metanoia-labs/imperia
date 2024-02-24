@@ -24,7 +24,7 @@ export class RandomWaifuCommand extends ImperiaCommand {
 
     public async chatInputRun(interaction: ImperiaCommand.ChatInputCommandInteraction) {
         return interaction.reply({
-            embeds: [new EmbedBuilder().setDescription(`Here's your waifu! :3`).setImage(await this.getWaifu())],
+            embeds: [new EmbedBuilder().setDescription(`~Here's your waifu! :3`).setImage(await this.getWaifu())],
         });
     }
 
