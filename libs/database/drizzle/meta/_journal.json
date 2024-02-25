@@ -15,6 +15,13 @@
       "when": 1708641709663,
       "tag": "0001_early_pyro",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708859334995,
+      "tag": "0002_naive_otto_octavius",
+      "breakpoints": true
     }
   ]
 }
