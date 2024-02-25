@@ -1,3 +1,17 @@
+## 1.2.1 (2024-02-25)
+
+
+### 🚀 Features
+
+- **BankCommand:** add skeleton files for a banking system ([a27de03](https://github.com/metanoia-labs/imperia/commit/a27de03))
+
+- **WalletCommand:** add skeleton files to view wallet balance command ([4d4e6e3](https://github.com/metanoia-labs/imperia/commit/4d4e6e3))
+
+
+### ❤️  Thank You
+
+- elizielx
+
 ## 1.2.0 (2024-02-25)
 
 
