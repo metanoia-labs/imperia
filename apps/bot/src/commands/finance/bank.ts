@@ -40,16 +40,16 @@ export class BankCommand extends ImperiaCommand {
             .setDescription(this.description)
             .addSubcommand((subcommand) => subcommand.setName("create").setDescription("Create a bank account."))
             .addSubcommand((subcommand) =>
-                subcommand.setName("balance").setDescription("View your bank account balance.")
+                subcommand.setName("balance").setDescription("View your credits account balance.")
             )
             .addSubcommand((subcommand) =>
-                subcommand.setName("deposit").setDescription("Deposit money into your bank account.")
+                subcommand.setName("deposit").setDescription("Deposit credits into your bank account.")
             )
             .addSubcommand((subcommand) =>
-                subcommand.setName("withdraw").setDescription("Withdraw money from your bank account.")
+                subcommand.setName("withdraw").setDescription("Withdraw credits from your bank account.")
             )
             .addSubcommand((subcommand) =>
-                subcommand.setName("transfer").setDescription("Transfer money between bank accounts.")
+                subcommand.setName("transfer").setDescription("Transfer credits between bank accounts.")
             );
 
         void registry.registerChatInputCommand(command, {
