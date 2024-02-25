@@ -7,6 +7,7 @@ export class BankCommand extends ImperiaCommand {
         super(context, {
             name: "bank",
             description: "Manage your bank account.",
+            preconditions: ["RegisteredUserOnly"],
             subcommands: [
                 {
                     name: "create",

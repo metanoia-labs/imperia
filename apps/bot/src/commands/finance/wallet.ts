@@ -8,6 +8,7 @@ export class WalletCommand extends ImperiaCommand {
             name: "Wallet",
             description: "View your wallet balance.",
             requiredClientPermissions: ["SendMessages"],
+            preconditions: ["RegisteredUserOnly"],
             ...options,
         });
     }
