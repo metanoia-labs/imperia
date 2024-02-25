@@ -1,3 +1,36 @@
+## 1.2.0 (2024-02-25)
+
+
+### 🚀 Features
+
+- add the env examples ([2b4c00e](https://github.com/metanoia-labs/imperia/commit/2b4c00e))
+
+- **bot:** add global enable/disable commands for dev ([36459e6](https://github.com/metanoia-labs/imperia/commit/36459e6))
+
+- **bot:** use sapphire logger plugin ([b22448d](https://github.com/metanoia-labs/imperia/commit/b22448d))
+
+- **bot:** add guild create event for server settings ([6b783ce](https://github.com/metanoia-labs/imperia/commit/6b783ce))
+
+- **bot:** a system command to manually trigger guild create event ([568e8e1](https://github.com/metanoia-labs/imperia/commit/568e8e1))
+
+- **bot:** remove debug loggers ([b1af552](https://github.com/metanoia-labs/imperia/commit/b1af552))
+
+- **bot:** add anilist searching command ([0566a70](https://github.com/metanoia-labs/imperia/commit/0566a70))
+
+- **bot:** add kitsu seach command ([fa36290](https://github.com/metanoia-labs/imperia/commit/fa36290))
+
+- **bot:** add a random waifu command ([c5c0328](https://github.com/metanoia-labs/imperia/commit/c5c0328))
+
+
+### 🩹 Fixes
+
+- **bot:** properly remove system cmds if not dev and qol update on things ([5320d6c](https://github.com/metanoia-labs/imperia/commit/5320d6c))
+
+
+### ❤️  Thank You
+
+- elizielx
+
 ## 1.1.2 (2024-02-20)
 
 
