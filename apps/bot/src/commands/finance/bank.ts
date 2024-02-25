@@ -39,9 +39,7 @@ export class BankCommand extends ImperiaCommand {
             .setName(this.name)
             .setDescription(this.description)
             .addSubcommand((subcommand) => subcommand.setName("create").setDescription("Create a bank account."))
-            .addSubcommand((subcommand) =>
-                subcommand.setName("balance").setDescription("View your credits account balance.")
-            )
+            .addSubcommand((subcommand) => subcommand.setName("balance").setDescription("View your account balance."))
             .addSubcommand((subcommand) =>
                 subcommand.setName("deposit").setDescription("Deposit credits into your bank account.")
             )
