@@ -26,7 +26,9 @@ Imperia is of Latin origin; Typically feminine, and comes from the word Impĕro 
 
 ## Contributing
 
-You are welcome to contribute to Imperia. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute to Imperia.
+You are welcome to contribute to Imperia, whether it be by reporting bugs, suggesting features, or even contributing code. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute to Imperia.
+
+View periodic release notes and updates on the [GitHub Releases](https://github.com/metanoia-labs/imperia/releases) page. Or view the individual release notes on the [CHANGELOG.md](CHANGELOG.md) files in the respective projects.
 
 ## License
 
