@@ -28,6 +28,9 @@
                 },
                 "migrate": {
                     "commands": ["pnpm exec ts-node libs/database/src/migration.ts"]
+                },
+                "drop": {
+                    "commands": ["pnpm exec drizzle-kit drop --config=libs/database/drizzle.config.ts"]
                 }
             }
         },

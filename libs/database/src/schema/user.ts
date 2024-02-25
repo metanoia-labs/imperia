@@ -1,6 +1,5 @@
 import { relations } from "drizzle-orm";
 import { pgTable, timestamp, varchar, uuid } from "drizzle-orm/pg-core";
-
 import { userWalletsTable } from "./wallet";
 import { bankAccountsTable } from "./bank";
 
