@@ -1,6 +1,6 @@
 import { EmbedBuilder, ImperiaCommand, getCommandMention } from "@imperia/discord-bot";
 import { RegisterBehavior } from "@sapphire/framework";
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder, hyperlink } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } from "discord.js";
 
 export class AboutCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
