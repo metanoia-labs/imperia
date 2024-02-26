@@ -28,10 +28,13 @@ export default async function Index() {
                                 >
                                     Invite to server
                                 </a>
-                                <Button className="px-8" variant="outline">
+                                <a
+                                    className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-8")}
+                                    href="/github"
+                                >
                                     <Icons.github className="mr-2 h-4 w-4" />
                                     GitHub
-                                </Button>
+                                </a>
                             </div>
                         </div>
                     </div>
