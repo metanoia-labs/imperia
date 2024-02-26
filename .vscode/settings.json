@@ -6,7 +6,8 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "Imperia",
+            "name": "imperia",
+            "group": "imperia",
             "database": "imperia",
             "username": "elizielx",
             "password": "elizielx"
