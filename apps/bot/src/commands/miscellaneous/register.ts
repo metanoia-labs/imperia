@@ -25,17 +25,23 @@ export class RegisterCommand extends ImperiaCommand {
     }
 
     public async chatInputRun(interaction: ImperiaCommand.ChatInputCommandInteraction) {
-        await interaction.deferReply();
+        await interaction.deferReply({
+            fetchReply: true,
+        });
 
-        const userQuery = await db.select().from(usersTable).where(eq(usersTable.discordId, interaction.user.id));
-        if (userQuery.length > 0) {
+        const query = await db.select().from(usersTable).where(eq(usersTable.discordId, interaction.user.id));
+        if (query.length === 0) {
+            await db.insert(usersTable).values({
+                discordId: interaction.user.id,
+            });
+
             return interaction.editReply({
-                content: "You are already registered.",
+                content: "You have been registered.",
             });
         }
 
-        return interaction.reply({
-            content: "This command is not yet implemented.",
+        return interaction.editReply({
+            content: "You are already registered.",
         });
     }
 }

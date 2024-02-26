@@ -14,13 +14,13 @@ export class RegisteredUserOnlyPrecondition extends Precondition {
 
     public async chatInputRun(interaction: CommandInteraction) {
         const userQuery = await db.select().from(usersTable).where(eq(usersTable.discordId, interaction.user.id));
-        if (userQuery.length > 0) {
-            return this.ok();
-        } else {
+        if (userQuery.length === 0) {
             return this.error({
                 message: "You must be a registered user to use this command.",
                 identifier: ImperiaIdentifiers.RegisteredUserOnly,
             });
+        } else {
+            return this.ok();
         }
     }
 }
