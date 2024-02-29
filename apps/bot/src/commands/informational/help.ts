@@ -33,7 +33,6 @@ export class HelpCommand extends ImperiaCommand {
         /**
          * ! Here be dragons.
          */
-
         await interaction.deferReply();
 
         const commands: CommandStore = this.container.stores.get("commands");
