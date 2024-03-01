@@ -1,6 +1,8 @@
+import { bankAccountsTable, db } from "@imperia/database";
 import { ImperiaCommand } from "@imperia/discord-bot";
 import { RegisterBehavior } from "@sapphire/framework";
 import { SlashCommandBuilder } from "discord.js";
+import { eq } from "drizzle-orm";
 
 export class BankCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
@@ -42,13 +44,28 @@ export class BankCommand extends ImperiaCommand {
             .addSubcommand((subcommand) => subcommand.setName("create").setDescription("Create a bank account."))
             .addSubcommand((subcommand) => subcommand.setName("balance").setDescription("View your account balance."))
             .addSubcommand((subcommand) =>
-                subcommand.setName("deposit").setDescription("Deposit credits into your bank account.")
+                subcommand
+                    .setName("deposit")
+                    .setDescription("Deposit credits into your bank account.")
+                    .addIntegerOption((option) =>
+                        option.setName("amount").setDescription("The amount of credits to deposit.").setRequired(true)
+                    )
             )
             .addSubcommand((subcommand) =>
-                subcommand.setName("withdraw").setDescription("Withdraw credits from your bank account.")
+                subcommand
+                    .setName("withdraw")
+                    .setDescription("Withdraw credits from your bank account.")
+                    .addIntegerOption((option) =>
+                        option.setName("amount").setDescription("The amount of credits to withdraw.").setRequired(true)
+                    )
             )
             .addSubcommand((subcommand) =>
-                subcommand.setName("transfer").setDescription("Transfer credits between bank accounts.")
+                subcommand
+                    .setName("transfer")
+                    .setDescription("Transfer credits between bank accounts.")
+                    .addUserOption((option) =>
+                        option.setName("user").setDescription("The user to transfer credits to.").setRequired(true)
+                    )
             );
 
         void registry.registerChatInputCommand(command, {
@@ -59,8 +76,23 @@ export class BankCommand extends ImperiaCommand {
     }
 
     public async chatInputRunCreate(interaction: ImperiaCommand.ChatInputCommandInteraction) {
+        const query = await db
+            .select()
+            .from(bankAccountsTable)
+            .where(eq(bankAccountsTable.discordId, interaction.user.id));
+        if (query.length === 0) {
+            await db.insert(bankAccountsTable).values({
+                discordId: interaction.user.id,
+                balance: 0,
+            });
+
+            return interaction.reply({
+                content: "You have successfully created a bank account.",
+            });
+        }
+
         return interaction.reply({
-            content: "This command is not yet implemented.",
+            content: "You already have a bank account.",
         });
     }
 
