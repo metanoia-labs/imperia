@@ -38,7 +38,6 @@ export class ChangelogCommand extends ImperiaCommand {
 
         return interaction.reply({
             embeds: [embed],
-            ephemeral: true,
         });
     }
 
