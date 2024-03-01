@@ -28,6 +28,7 @@ export class RegisterCommand extends ImperiaCommand {
     public async chatInputRun(interaction: ImperiaCommand.ChatInputCommandInteraction) {
         await interaction.deferReply({
             fetchReply: true,
+            ephemeral: true,
         });
 
         const query = await db.select().from(usersTable).where(eq(usersTable.discordId, interaction.user.id));
