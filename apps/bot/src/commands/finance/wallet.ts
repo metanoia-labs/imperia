@@ -1,6 +1,8 @@
+import { db, userWalletsTable } from "@imperia/database";
 import { ImperiaCommand } from "@imperia/discord-bot";
 import { RegisterBehavior } from "@sapphire/framework";
 import { SlashCommandBuilder } from "discord.js";
+import { eq } from "drizzle-orm";
 
 export class WalletCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
@@ -24,8 +26,15 @@ export class WalletCommand extends ImperiaCommand {
     }
 
     public async chatInputRun(interaction: ImperiaCommand.ChatInputCommandInteraction) {
+        const query = await db
+            .select()
+            .from(userWalletsTable)
+            .where(eq(userWalletsTable.discordId, interaction.user.id));
+
+        const wallet = query[0];
+
         return interaction.reply({
-            content: "This command is not yet implemented.",
+            content: `Your wallet balance is: ${wallet.balance}`,
         });
     }
 }
