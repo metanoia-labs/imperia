@@ -1,3 +1,27 @@
+## 1.3.0 (2024-03-01)
+
+
+### 🚀 Features
+
+- **RegisteredUserOnlyPrecondition:** add a precondition to check if there is a user on the db ([ddcc927](https://github.com/metanoia-labs/imperia/commit/ddcc927))
+
+- **RegisterCommand:** add skeleton file for user registration command ([8648634](https://github.com/metanoia-labs/imperia/commit/8648634))
+
+- **AboutCommand:** furnish about command contnet ([085c276](https://github.com/metanoia-labs/imperia/commit/085c276))
+
+- **WalletCommand:** show wallet balance on run ([b4b4e01](https://github.com/metanoia-labs/imperia/commit/b4b4e01))
+
+- **RegisterCommand:** add user agreement prompt for privacy policy and terms of service ([ef48888](https://github.com/metanoia-labs/imperia/commit/ef48888))
+
+- **RegisterCommand:** forgor to add the file ([71c6b71](https://github.com/metanoia-labs/imperia/commit/71c6b71))
+
+- **ChangelogCommand:** add a command to show changelogs from gh repo releases ([ebb37ef](https://github.com/metanoia-labs/imperia/commit/ebb37ef))
+
+
+### ❤️  Thank You
+
+- elizielx
+
 ## 1.2.1 (2024-02-25)
 
 
