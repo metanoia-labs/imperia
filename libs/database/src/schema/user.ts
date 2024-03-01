@@ -10,6 +10,12 @@ export const usersTable = pgTable("users", {
 });
 
 export const usersRelations = relations(usersTable, ({ one }) => ({
-    wallets: one(userWalletsTable),
-    bank_accounts: one(bankAccountsTable),
+    wallets: one(userWalletsTable, {
+        fields: [usersTable.discordId],
+        references: [userWalletsTable.discordId],
+    }),
+    bank_accounts: one(bankAccountsTable, {
+        fields: [usersTable.discordId],
+        references: [bankAccountsTable.discordId],
+    }),
 }));
