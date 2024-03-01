@@ -13,3 +13,4 @@ export * from "./typings/identifiers";
 export * from "./typings/events";
 export * from "./typings/anilist";
 export * from "./typings/kitsu";
+export * from "./typings/changelog";

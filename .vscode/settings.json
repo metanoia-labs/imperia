@@ -1,5 +1,5 @@
 {
-    "vscord.app.privacyMode.enable": true,
+    "vscord.app.privacyMode.enable": false,
     "sqltools.connections": [
         {
             "previewLimit": 50,
