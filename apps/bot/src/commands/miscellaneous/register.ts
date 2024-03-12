@@ -9,7 +9,7 @@ export class RegisterCommand extends ImperiaCommand {
     public constructor(context: ImperiaCommand.Context, options: ImperiaCommand.Options) {
         super(context, {
             name: "register",
-            description: "Regiters and syncs your account with Imperia.",
+            description: "Registers and syncs your account with Imperia.",
             requiredClientPermissions: ["SendMessages"],
             ...options,
         });
